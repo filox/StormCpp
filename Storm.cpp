@@ -2,6 +2,11 @@
 Copyright (c) 2012, Sasa Petrovic
 All rights reserved.
 
+This work is conducted as part of the EPSRC CROSS project
+(http://demeter.inf.ed.ac.uk/cross), a joint venture between
+School of Informatics, University of Edinburgh, and School of
+Computing Science, University of Glasgow.
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
     * Redistributions of source code must retain the above copyright
