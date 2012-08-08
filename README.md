@@ -1,4 +1,4 @@
 StormCpp
 ========
 
-A small C++ wrapper for Storm.
+A small C++ wrapper for Storm
