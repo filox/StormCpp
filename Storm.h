@@ -121,7 +121,8 @@ namespace storm
 	// Prints the message to stdout.  Using endl will automatically flush.
 	inline void SendMsgToParent(Json::Value &v)
 	{
-		std::cout << v << std::endl;
+		static Json::FastWriter writer;
+		std::cout << writer.write(v);
 		std::cout << "end" << std::endl;
 	}
 
