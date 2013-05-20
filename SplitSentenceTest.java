@@ -22,7 +22,7 @@ import java.util.Map;
 * It is taken from
 * https://github.com/nathanmarz/storm-starter/blob/master/src/jvm/storm/starter/WordCountTopology.java
 */
-public class WordCountTopology {
+public class SplitSentenceTest {
     public static class SplitSentence extends ShellBolt implements IRichBolt {
         
         public SplitSentence() {
