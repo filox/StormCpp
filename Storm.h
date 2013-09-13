@@ -258,7 +258,7 @@ namespace storm
 		if (!stream.empty())
 			v["stream"] = stream;
 		Json::Value json_anchors;
-		for (int i = 0; i < anchors.size(); ++i)
+		for (unsigned int i = 0; i < anchors.size(); ++i)
 			json_anchors.append(anchors[i].GetID());
 		v["anchors"] = json_anchors;
 		if (task != -1)

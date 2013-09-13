@@ -1,0 +1,72 @@
+From 34db2a6c085c02e087954dd66ae6ab063b0c1d00 Mon Sep 17 00:00:00 2001
+From: Iain Emsley <iain.emsley@oerc.ox.ac.uk>
+Date: Fri, 13 Sep 2013 12:05:51 +0100
+Subject: [PATCH 1/2] Added namespace to stirng
+
+---
+ SplitSentence.h |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/SplitSentence.h b/SplitSentence.h
+index e82ceed..b9c32d0 100644
+--- a/SplitSentence.h
++++ b/SplitSentence.h
+@@ -48,13 +48,13 @@ void splitString(
+ 	parts.clear();
+ 	size_t delimiterPos = text.find(delimiter);
+ 	size_t lastPos = 0;
+-	if (delimiterPos == string::npos)
++	if (delimiterPos == std::string::npos)
+ 	{
+ 		parts.push_back(text);
+ 		return;
+ 	}
+ 
+-	while(delimiterPos != string::npos)
++	while(delimiterPos != std::string::npos)
+ 	{
+ 		parts.push_back(text.substr(lastPos, delimiterPos - lastPos));
+ 		lastPos = delimiterPos + delimiter.size();
+-- 
+1.7.9.5
+
+
+From 3ae21bbb76fdaf9df7ebc925be0849fe15f5971c Mon Sep 17 00:00:00 2001
+From: Iain Emsley <iain.emsley@oerc.ox.ac.uk>
+Date: Fri, 13 Sep 2013 12:11:07 +0100
+Subject: [PATCH 2/2] Altered int to being unsigned
+
+---
+ SplitSentence.h |    2 +-
+ Storm.h         |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/SplitSentence.h b/SplitSentence.h
+index b9c32d0..22b65ed 100644
+--- a/SplitSentence.h
++++ b/SplitSentence.h
+@@ -72,7 +72,7 @@ class SplitSentence : public BasicBolt
+ 			std::string s = tuple.GetValues()[2].asString();
+ 			std::vector<std::string> tokens;
+ 			splitString(s, tokens, " ");
+-			for (int i = 0; i < tokens.size(); ++i)
++			for (unsigned int i = 0; i < tokens.size(); ++i)
+ 			{
+ 				Json::Value j_token;
+ 				j_token.append(tokens[i]);
+diff --git a/Storm.h b/Storm.h
+index 5d820f7..cd92b77 100644
+--- a/Storm.h
++++ b/Storm.h
+@@ -258,7 +258,7 @@ namespace storm
+ 		if (!stream.empty())
+ 			v["stream"] = stream;
+ 		Json::Value json_anchors;
+-		for (int i = 0; i < anchors.size(); ++i)
++		for (unsigned int i = 0; i < anchors.size(); ++i)
+ 			json_anchors.append(anchors[i].GetID());
+ 		v["anchors"] = json_anchors;
+ 		if (task != -1)
+-- 
+1.7.9.5
+
