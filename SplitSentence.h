@@ -48,13 +48,13 @@ void splitString(
 	parts.clear();
 	size_t delimiterPos = text.find(delimiter);
 	size_t lastPos = 0;
-	if (delimiterPos == string::npos)
+	if (delimiterPos == std::string::npos)
 	{
 		parts.push_back(text);
 		return;
 	}
 
-	while(delimiterPos != string::npos)
+	while(delimiterPos != std::string::npos)
 	{
 		parts.push_back(text.substr(lastPos, delimiterPos - lastPos));
 		lastPos = delimiterPos + delimiter.size();
