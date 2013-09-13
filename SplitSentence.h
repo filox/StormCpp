@@ -72,7 +72,7 @@ class SplitSentence : public BasicBolt
 			std::string s = tuple.GetValues()[2].asString();
 			std::vector<std::string> tokens;
 			splitString(s, tokens, " ");
-			for (int i = 0; i < tokens.size(); ++i)
+			for (unsigned int i = 0; i < tokens.size(); ++i)
 			{
 				Json::Value j_token;
 				j_token.append(tokens[i]);
